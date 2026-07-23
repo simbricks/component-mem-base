@@ -52,7 +52,7 @@ class BasicMem(sim_base.Simulator):
         super().add(mem)
 
     def run_cmd(self, inst: inst_base.Instantiation) -> str:
-        cmd = f"{inst.env.repo_base(relative_path=self._executable)} "
+        cmd = f"{self._executable} "
 
         mem_devices = self.filter_components_by_type(ty=sys_mem.MemSimpleDevice)
         assert len(mem_devices) == 1
@@ -94,7 +94,7 @@ class BasicInterconnect(sim_base.Simulator):
         super().add(ic)
 
     def run_cmd(self, inst: inst_base.Instantiation) -> str:
-        cmd = f"{inst.env.repo_base(relative_path=self._executable)} "
+        cmd = f"{self._executable} "
 
         interconnects = self.filter_components_by_type(ty=sys_mem.MemInterconnect)
         assert len(interconnects) == 1
@@ -146,5 +146,5 @@ class MemTerminal(sim_base.Simulator):
         mem_dev = mem_devices[0]
 
         url = self.get_interface_url(inst, mem_dev._mem_if)
-        cmd = f"{inst.env.repo_base(relative_path=self._executable)} {url}"
+        cmd = f"{self._executable} {url}"
         return cmd
