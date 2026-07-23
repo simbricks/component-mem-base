@@ -36,7 +36,7 @@ class BasicMem(sim_base.Simulator):
 
     def __init__(self, simulation: sim_base.Simulation) -> None:
         super().__init__(
-            simulation=simulation, executable="sims/mem/basicmem/basicmem", name=""
+            simulation=simulation, executable="simb_mem_basicmem", name=""
         )
         self.name = f"basicmem-{self._id}"
 
@@ -78,7 +78,7 @@ class BasicMem(sim_base.Simulator):
 class BasicInterconnect(sim_base.Simulator):
     def __init__(self, simulation: sim_base.Simulation) -> None:
         super().__init__(
-            simulation=simulation, executable="sims/mem/interconnect/interconnect", name=""
+            simulation=simulation, executable="simb_mem_interconnect", name=""
         )
         self.name = f"interconnect-{self._id}"
 
@@ -125,7 +125,7 @@ class MemTerminal(sim_base.Simulator):
 
     def __init__(self, simulation: sim_base.Simulation) -> None:
         super().__init__(
-            simulation=simulation, executable="sims/mem/terminal/terminal", name=""
+            simulation=simulation, executable="simb_mem_terminal", name=""
         )
         self.name = f"terminal-{self._id}"
 
