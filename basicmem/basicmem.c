@@ -269,9 +269,9 @@ int main(int argc, char *argv[]) {
   if (argc >= 8)
     cur_ts = strtoull(argv[7], NULL, 0);
   if (argc >= 9)
-    memParams.sync_interval = strtoull(argv[8], NULL, 0) * 1000ULL;
+    memParams.sync_interval = strtoull(argv[8], NULL, 0);
   if (argc >= 10)
-    memParams.link_latency = strtoull(argv[9], NULL, 0) * 1000ULL;
+    memParams.link_latency = strtoull(argv[9], NULL, 0);
   if (argc >= 11)
     elf_file = argv[10];
 

@@ -68,7 +68,8 @@ class BasicMem(sim_base.Simulator):
         )
         cmd += (
             f" {mem_dev._size} {mem_dev._addr} {mem_dev._as_id} {socket._path}"
-            f" {shm} {1 if mem_run_sync else 0} 0 {mem_sync_period} {mem_latency}"
+            f" {shm} {1 if mem_run_sync else 0} 0 {mem_sync_period.picoseconds}"
+            f" {mem_latency.picoseconds}"
         )
         if mem_dev._load_elf is not None:
             cmd += f" {mem_dev._load_elf}"
